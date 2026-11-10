@@ -8,3 +8,13 @@ var Delighters = new (function() {
 	var self = this,
 			dels = this.dels = [],
 
+			// default options
+			options = {
+				attribute: 	'data-delighter',
+				classNames: ['delighter', 'started', 'ended'],
+				start: 			0.75, // default start threshold
+				end: 				0.75, // default end threshold
+				autoInit: 	true 	// initialize when DOMContentLoaded
+			};
+
+	document.addEventListener("DOMContentLoaded", function() {
