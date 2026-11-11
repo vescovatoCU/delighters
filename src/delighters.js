@@ -18,3 +18,13 @@ var Delighters = new (function() {
 			};
 
 	document.addEventListener("DOMContentLoaded", function() {
+		if (options.autoInit) init();
+	});
+
+	function config(opts) {
+		for (var name in opts) options[name] = opts[name];
+	}
+	
+	function init() {		
+		document.addEventListener('scroll', scroll)
+		var els = document.querySelectorAll('[' + options.attribute + ']');
