@@ -28,3 +28,13 @@ var Delighters = new (function() {
 	function init() {		
 		document.addEventListener('scroll', scroll)
 		var els = document.querySelectorAll('[' + options.attribute + ']');
+
+		for (var i=0; i<els.length; i++) {
+			var el 			= els[i],
+					def 		= el.getAttribute(options.attribute, 2),
+					pairs 	= def.split(';'),
+					del 		= {};
+					del.start = options.start;
+					del.end = options.end;
+			
+			for (var j=0; j<pairs.length; j++) {
