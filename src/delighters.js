@@ -38,3 +38,13 @@ var Delighters = new (function() {
 					del.end = options.end;
 			
 			for (var j=0; j<pairs.length; j++) {
+				var pair 	= pairs[j].split(':'),
+						name 	= pair[0],
+						val 	= isNaN(pair[1] * 1)? pair[1] : pair[1] * 1;
+				if (name) del[name] = (val === undefined)? true : val;
+			}
+
+			del.el = el;
+			del.id = dels.length;
+			dels.push(del);
+			el.classList.add(options.classNames[0])
