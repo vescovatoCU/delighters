@@ -48,3 +48,13 @@ var Delighters = new (function() {
 			del.id = dels.length;
 			dels.push(del);
 			el.classList.add(options.classNames[0])
+			if (del.debug) el.style.outline = 'solid red 4px';
+		}
+		scroll();
+	}
+
+	function scroll() {
+		var viewportHeight = window.innerHeight;
+		for (var i=0; i<dels.length; i++) {
+			var del = dels[i],
+					box = del.el.getBoundingClientRect(),
